@@ -1,0 +1,118 @@
+.navbar-container {
+  width: 100%;
+  height: 60px;
+  position: sticky;
+  background: rgb(164, 236, 172);
+  background: linear-gradient(
+    90deg,
+    rgb(106, 83, 119) 0%,
+    rgb(150, 119, 161) 23%,
+    rgb(187, 133, 218) 59%,
+    rgb(241, 193, 255) 92%
+  );
+  box-shadow: 0 0 40px 15px rgb(229, 199, 245);
+  img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 15px;
+    top: 5px;
+    animation: 3s flip ease-in-out infinite;
+    @keyframes flip {
+      0% {
+        transform: rotate(0deg);
+      }
+      20% {
+        transform: rotate(40deg);
+      }
+      40% {
+        transform: rotate(0deg);
+      }
+      60% {
+        transform: rotate(-40deg);
+      }
+      80% {
+        transform: rotate(0deg);
+      }
+    }
+  }
+  p {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    font-size: 44px;
+    transform: rotate(-5deg);
+    font-family: "Julee";
+    animation: 3s text ease-in-out infinite;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    @keyframes text {
+      0% {
+        text-shadow: 0 0 15px #ffffff;
+      }
+      50% {
+        text-shadow: 0 0 20px #c1c1c1, 0 0 10px;
+      }
+      100% {
+        text-shadow: 0 0 15px #ffffff;
+      }
+    }
+  }
+
+  .navbar {
+    position: absolute;
+    width: 60%;
+    height: 90%;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .buy-training {
+      text-decoration: none;
+      font-size: 40px;
+      font-family: "Bebas Neue";
+      background: rgb(158, 203, 202);
+      background: linear-gradient(
+        90deg,
+        rgba(158, 203, 202, 1) 0%,
+        rgba(181, 226, 219, 1) 36%,
+        rgba(179, 237, 234, 1) 77%
+      );
+      color: rgb(41, 41, 77);
+      clip-path: polygon(11% 0, 100% 0%, 89% 100%, 0% 100%);
+      width: 450px;
+      transform: skewX(-10deg);
+      letter-spacing: 3px;
+      transition: all 4s;
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+    }
+    .buy-suplements {
+      text-decoration: none;
+      font-size: 40px;
+      font-family: "Bebas Neue";
+      background: rgb(158, 203, 202);
+      background: linear-gradient(
+        90deg,
+        rgba(158, 203, 202, 1) 0%,
+        rgba(181, 226, 219, 1) 36%,
+        rgba(179, 237, 234, 1) 77%
+      );
+      color: rgb(41, 41, 77);
+      clip-path: polygon(11% 0, 100% 0%, 89% 100%, 0% 100%);
+      width: 450px;
+      transform: skewX(-10deg);
+      letter-spacing: 3px;
+      transition: all 4s;
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+    }
+  }
+}
