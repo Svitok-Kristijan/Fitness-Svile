@@ -4,6 +4,7 @@ import shoulderPng from "../../images/shoulder.png";
 import {Link} from "react-router-dom";
 import videoShoulder from "../../video/videoShoulder.mp4";
 import playPng from "../../images/play.png";
+import pausePng from "../../images/pause.png";
 
 const Shoulder = () => {
   const videoRef = useRef(null);
@@ -57,7 +58,7 @@ const Shoulder = () => {
           />
           {isPlaying ? (
             <div className="pause-button" onClick={handleVideoClick}>
-              &#9868;
+              <img src={pausePng} alt="play" />
             </div>
           ) : (
             <div className="play-button" onClick={handleVideoClick}>

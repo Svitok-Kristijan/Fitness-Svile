@@ -33,8 +33,12 @@ const Training = () => {
         <Link to="/chest" className="link">
           Chest
         </Link>
-        <Link className="link">Stomack</Link>
-        <Link className="link">Legs</Link>
+        <Link to="/stomack" className="link">
+          Stomack
+        </Link>
+        <Link to="/legs" className="link">
+          Legs
+        </Link>
       </div>
     </div>
   );

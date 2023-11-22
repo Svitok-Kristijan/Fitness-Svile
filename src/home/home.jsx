@@ -1,19 +1,25 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./home.scss";
 import appBackgroundPhoto from "../images/background.jpg";
 import trainingPhoto from "../images/training.jpg";
 import trainingPlanPhoto from "../images/trainingPlan.jpg";
 import suplementsPhoto from "../images/suplements.jpg";
 import weightPng from "../images/weight.png";
-import heartPng from "../images/heart.png";
+
 import {Link} from "react-router-dom";
+//import {addCollectionAndDocuments} from "../utils/firebase.utils";
+//import SUPPLEMENTS_DATA from "../suplements";
 
 const Home = () => {
+  /*useEffect(() => {
+    console.log("Calling addCollectionAndDocuments");
+    addCollectionAndDocuments("suplements", SUPPLEMENTS_DATA);
+  }, []);*/
   return (
     <div className="Home-container">
       <p className="App-Tittle">Fitness Svile</p>
       <img className="weight" src={weightPng} alt="weight" />
-      <img className="heart" src={heartPng} alt="heart" />
+
       <div className="App-background">
         <img
           className="App-background-photo"

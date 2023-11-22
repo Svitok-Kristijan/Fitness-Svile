@@ -1,0 +1,117 @@
+.shopingBag-container {
+  position: absolute;
+  top: 1%;
+  right: 2%;
+  z-index: 99;
+  cursor: pointer;
+
+  img {
+    width: 70px;
+    height: 70px;
+  }
+  .price-container {
+    display: flex;
+
+    button {
+      font-size: 17px;
+      width: 140px;
+      height: 60px;
+      margin-top: 10px;
+
+      border-radius: 5px;
+      border: 2px solid rgb(192, 246, 239);
+      @keyframes example {
+        0% {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        30% {
+          clip-path: polygon(5% 11%, 100% 0, 100% 100%, 0% 100%);
+        }
+        50% {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        70% {
+          clip-path: polygon(0 0, 100% 0, 92% 92%, 0% 100%);
+        }
+        100% {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+      }
+
+      &:hover {
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        animation: example 4s infinite;
+        border: none;
+        background-color: rgba(87, 147, 138, 0.694);
+        cursor: pointer;
+      }
+    }
+
+    .total-price {
+      display: inline-block;
+      background-color: rgb(214, 227, 227);
+      border-radius: 5px;
+      font-size: 22px;
+
+      width: 200px;
+      z-index: 999;
+
+      margin-top: 10px;
+    }
+  }
+  .item-container {
+    background-color: white;
+    position: absolute;
+    overflow: scroll;
+    overflow-x: hidden;
+    width: 300px;
+    min-height: 80px;
+    max-height: 400px;
+    right: 1%;
+    top: 89%;
+    border: 3px solid rgba(247, 192, 255, 0.227);
+    border-radius: 5px;
+    box-shadow: 2px 3px 6px 5px rgba(125, 178, 186, 0.643);
+    display: flex;
+    flex-direction: column;
+
+    .item {
+      display: flex;
+      flex-direction: row;
+      margin: 3px;
+      justify-content: space-between;
+      align-items: center;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+      .name {
+        font-size: 16px;
+      }
+      button {
+        width: 20px;
+        height: 25px;
+        border: none;
+        background-color: rgb(234, 234, 234);
+        border-radius: 20px;
+        margin-right: 5px;
+        transition: all 0.8s;
+        &:hover {
+          background-color: rgb(183, 183, 183);
+          transform: scale(1.1);
+          cursor: pointer;
+        }
+      }
+      .quantity-container {
+        display: flex;
+        .quantity {
+          font-size: 18px;
+          font-weight: bold;
+          font-family: Arial, Helvetica, sans-serif;
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+}

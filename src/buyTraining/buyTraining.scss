@@ -1,0 +1,337 @@
+.buyTraining-container {
+  width: 100%;
+  height: 55vh;
+  background: rgb(232, 165, 214);
+  background: linear-gradient(
+    90deg,
+    rgb(252, 114, 215) 0%,
+    rgba(181, 226, 219, 1) 36%,
+    rgb(255, 130, 226) 72%
+  );
+
+  .back-png {
+    width: 120px;
+    height: 70px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 999;
+    opacity: 0.3;
+    transition: all 0.7s;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .plan-container {
+    position: absolute;
+    width: 1100px;
+    height: 700px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 99;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .basic-plan {
+      width: 30%;
+      height: 70%;
+      background-color: white;
+      -webkit-box-shadow: 11px 11px 19px 5px #adadac;
+      box-shadow: 11px 11px 19px 5px #adadac;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 5px;
+      &::before {
+        content: "For Beginners   30%🔥";
+        text-align: center;
+        position: absolute;
+        font-weight: 500;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 1px;
+        top: 5%;
+        left: -36px;
+        transform: rotate(-40deg);
+        width: 100px;
+        height: 100px;
+        background: rgb(249, 143, 204);
+        background: radial-gradient(
+          circle,
+          rgba(249, 143, 204, 1) 0%,
+          rgba(252, 70, 107, 1) 100%
+        );
+        font-size: 18px;
+        clip-path: polygon(51% 3%, 100% 33%, 77% 88%, 54% 89%, 30% 89%, 0 33%);
+        padding: 1px;
+
+        display: flex;
+        padding-top: 10px;
+      }
+      h2 {
+        margin-top: 30px;
+        font-size: 34px;
+        letter-spacing: 3px;
+        font-family: "Bebas Neue";
+      }
+      button {
+        width: 220px;
+        height: 50px;
+        border-radius: 20px;
+        border: none;
+        background-color: rgba(134, 252, 252, 0.657);
+        margin-top: 20px;
+        font-size: 22px;
+        transition: all 1s;
+        font-weight: bolder;
+        &:hover {
+          background-color: rgb(42, 201, 201);
+          cursor: pointer;
+          transform: scale(1.03);
+          -webkit-box-shadow: 5px 5px 15px -6px #787878;
+          box-shadow: 5px 5px 15px -6px #525252;
+          font-weight: bold;
+          color: white;
+        }
+      }
+    }
+    .description {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      span {
+        margin-top: 25px;
+        font-size: 17px;
+        font-weight: 500;
+      }
+    }
+
+    .standard-plan {
+      width: 30%;
+      height: 80%;
+      background-color: white;
+      -webkit-box-shadow: 1px 12px 19px 9px #adadac;
+      box-shadow: 1px 12px 19px 9px #adadac;
+      display: flex;
+      background: rgb(63, 94, 251);
+      background: radial-gradient(
+        circle,
+        rgba(63, 94, 251, 1) 0%,
+        rgba(252, 70, 107, 1) 100%
+      );
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 5px;
+      &::before {
+        content: "Save 51 % 🏷️";
+        position: absolute;
+        top: 37px;
+        width: 160px;
+        height: 45px;
+        background-color: rgb(227, 207, 93);
+        clip-path: polygon(
+          0% 0%,
+          100% 0%,
+          100% 75%,
+          75% 75%,
+          75% 100%,
+          50% 75%,
+          0% 75%
+        );
+        display: flex;
+        align-items: space-between;
+        justify-content: center;
+        font-size: large;
+        font-weight: bolder;
+        color: rgb(196, 69, 69);
+        border-radius: 3px;
+      }
+      h2 {
+        margin-top: 25px;
+        margin-bottom: 5px;
+        font-size: 34px;
+        letter-spacing: 3px;
+        font-family: "Bebas Neue";
+        color: rgb(70, 235, 235);
+      }
+      .standard {
+        width: 95%;
+        height: 84%;
+        background-color: white;
+        border-radius: 5px;
+        .last-price {
+          margin-top: 20px;
+          color: #adadac;
+          font-size: 32px;
+          text-decoration: line-through;
+        }
+        .price {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          font-size: 42px;
+          align-items: flex-end;
+          font-family: Tahoma;
+          font-weight: bold;
+          p {
+            font-size: 16px;
+            margin-bottom: 8px;
+            margin-left: 5px;
+          }
+          h2 {
+            margin-top: 30px;
+            font-size: 38px;
+            letter-spacing: 3px;
+            font-family: "Bebas Neue";
+          }
+        }
+        button {
+          margin-top: 25px;
+          width: 220px;
+          height: 50px;
+          border-radius: 20px;
+          border: none;
+          background: rgb(168, 15, 129);
+          background: linear-gradient(
+            90deg,
+            rgba(168, 15, 129, 1) 0%,
+            rgba(250, 157, 222, 0.7987570028011204) 45%,
+            rgba(172, 159, 254, 0.706) 95%
+          );
+
+          font-size: 22px;
+          transition: all 1s;
+          font-weight: bolder;
+          &:hover {
+            background-color: rgb(42, 201, 201);
+            cursor: pointer;
+            transform: scale(1.03);
+            -webkit-box-shadow: 5px 5px 15px -6px #787878;
+            box-shadow: 5px 5px 15px -6px #525252;
+            font-weight: bold;
+            color: white;
+          }
+        }
+      }
+      .description {
+        margin-left: 10px;
+      }
+    }
+    .last-price {
+      margin-top: 20px;
+      color: #adadac;
+      font-size: 32px;
+      text-decoration: line-through;
+    }
+    .price {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      font-size: 42px;
+      align-items: flex-end;
+      font-family: Tahoma;
+      font-weight: bold;
+      p {
+        font-size: 16px;
+        margin-bottom: 8px;
+        margin-left: 5px;
+      }
+      h2 {
+        margin-top: 30px;
+        font-size: 38px;
+        letter-spacing: 3px;
+        font-family: "Bebas Neue";
+      }
+    }
+    .premium-plan {
+      width: 30%;
+      height: 70%;
+      background-color: white;
+      -webkit-box-shadow: -9px 11px 19px 5px #adadac;
+      box-shadow: -9px 11px 19px 5px #adadac;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      border-radius: 5px;
+      &::after {
+        content: "For Advance 25%🔥 ";
+        position: absolute;
+        font-weight: 500;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 1px;
+        right: -30px;
+        top: 4.5%;
+        transform: rotate(40deg);
+        width: 100px;
+        height: 100px;
+        background: rgb(249, 143, 204);
+        background: radial-gradient(
+          circle,
+          rgba(249, 143, 204, 1) 0%,
+          rgba(252, 70, 107, 1) 100%
+        );
+        font-size: 18px;
+        clip-path: polygon(51% 3%, 100% 33%, 76% 88%, 54% 89%, 28% 89%, 0 33%);
+        padding: 1px;
+
+        display: flex;
+        padding-top: 10px;
+      }
+      h2 {
+        margin-top: 30px;
+        font-size: 34px;
+        letter-spacing: 3px;
+        font-family: "Bebas Neue";
+      }
+      button {
+        width: 220px;
+        height: 50px;
+        border-radius: 20px;
+        border: none;
+        background-color: rgba(252, 238, 134, 0.657);
+        margin-top: 20px;
+        font-size: 22px;
+        transition: all 1s;
+        font-weight: bolder;
+        &:hover {
+          background-color: rgb(201, 169, 42);
+          cursor: pointer;
+          transform: scale(1.03);
+          -webkit-box-shadow: 5px 5px 15px -6px #787878;
+          box-shadow: 5px 5px 15px -6px #525252;
+          font-weight: bold;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .buyTraining {
+    width: 100%;
+    height: 500px;
+    background: rgb(165, 232, 232);
+    background: linear-gradient(
+      90deg,
+      rgba(165, 232, 232, 1) 0%,
+      rgba(181, 226, 219, 1) 36%,
+      rgba(222, 255, 255, 1) 72%
+    );
+    clip-path: polygon(
+      50% 0%,
+      100% 0,
+      100% 43%,
+      100% 89%,
+      77% 98%,
+      45% 100%,
+      17% 94%,
+      0 100%,
+      0 0
+    );
+  }
+}
