@@ -15,6 +15,9 @@
     height: 80px;
     animation: heightAnimation 3.8s ease-in-out infinite;
     @keyframes heightAnimation {
+      0% {
+        top: 25%;
+      }
       10% {
         top: 60%;
         transform: rotate(6deg);
@@ -60,66 +63,80 @@
     position: absolute;
     height: 100%;
     width: 100%;
-
-    background: rgb(254, 152, 229);
+    z-index: -99;
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
     background: linear-gradient(
-      90deg,
-      rgba(190, 190, 190, 0.684) 0%,
-      rgba(201, 201, 201, 0.775) 36%,
-      rgb(231, 231, 231) 77%
+      315deg,
+      rgba(159, 7, 149, 0.616) 3%,
+      rgba(60, 133, 206, 0.736) 38%,
+      rgba(48, 238, 225, 0.727) 68%,
+      rgba(253, 72, 214, 0.652) 98%
     );
-    z-index: -999;
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
   }
 
-  .background {
-    position: absolute;
-    height: 600px;
-    width: 100%;
-
-    background: rgb(254, 152, 229);
-    background: linear-gradient(
-      90deg,
-      rgba(255, 133, 243, 0.684) 0%,
-      rgba(204, 170, 198, 0.652) 36%,
-      rgb(253, 224, 254) 77%
-    );
-    z-index: -99;
-    clip-path: polygon(
-      0% 0%,
-      100% 0%,
-      100% 79%,
-      83% 91%,
-      61% 94%,
-      29% 90%,
-      0 100%
-    );
+  @keyframes gradient {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
   }
-  .background-under {
-    position: absolute;
-    height: 400px;
-    width: 100%;
-    background: rgb(158, 203, 202);
-    background: linear-gradient(
-      90deg,
-      rgba(95, 238, 238, 0.684) 0%,
-      rgba(176, 213, 219, 0.879) 36%,
-      rgba(145, 215, 213, 0.55) 77%
-    );
-    z-index: -99;
-    clip-path: polygon(
-      0% 15%,
-      0 0,
-      15% 0%,
-      85% 0%,
-      100% 0,
-      100% 15%,
-      100% 69%,
-      80% 92%,
-      61% 97%,
-      39% 90%,
-      15% 93%,
-      0 100%
-    );
+
+  .wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+  }
+
+  .wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+  }
+
+  @keyframes wave {
+    2% {
+      transform: translateX(1);
+    }
+
+    25% {
+      transform: translateX(-25%);
+    }
+
+    50% {
+      transform: translateX(-50%);
+    }
+
+    75% {
+      transform: translateX(-25%);
+    }
+
+    100% {
+      transform: translateX(1);
+    }
   }
 
   .App-background {
@@ -127,7 +144,7 @@
     overflow: hidden;
     height: 100vh;
     .App-Tittle-container {
-      position: absolute;
+      position: fixed;
       top: 30%;
       transform: translate(-50%, -50%);
       left: 7%;

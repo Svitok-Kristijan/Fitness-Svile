@@ -2,13 +2,23 @@ import React from "react";
 import "./buyTraining.scss";
 import backPng from "../images/backPng.png";
 import {useNavigate} from "react-router-dom";
-import {updateQuantity, addToCart} from "../store/card-action";
+import {
+  updateQuantity,
+  addToCart,
+  toggleShoppingBag,
+} from "../store/card-action";
 import {connect} from "react-redux";
 import {v4 as uuidv4} from "uuid";
 import {ToastContainer, toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const BuyTraining = ({shoppingCart, updateQuantity, addToCart}) => {
+const BuyTraining = ({
+  isOpen,
+  toggleShoppingBag,
+  shoppingCart,
+  updateQuantity,
+  addToCart,
+}) => {
   const navigate = useNavigate();
 
   const goBack = () => {
@@ -37,6 +47,10 @@ const BuyTraining = ({shoppingCart, updateQuantity, addToCart}) => {
         );
       } else {
         addToCart(item, 1);
+        if (!isOpen) {
+          toggleShoppingBag();
+        }
+
         toast.success(`${item.itemName} has been added to your shopping bag!`, {
           autoClose: 2000,
         });
@@ -45,7 +59,7 @@ const BuyTraining = ({shoppingCart, updateQuantity, addToCart}) => {
   };
   return (
     <div className="buyTraining-container">
-      <ToastContainer />
+      <ToastContainer className="toast" />
       <img className="back-png" src={backPng} alt="back" onClick={goBack} />
       <div className="plan-container">
         <div className="basic-plan">
@@ -107,7 +121,10 @@ const BuyTraining = ({shoppingCart, updateQuantity, addToCart}) => {
 
 const mapStateToProps = (state) => ({
   shoppingCart: state.shoppingCart,
+  isOpen: state.isOpen,
 });
-export default connect(mapStateToProps, {addToCart, updateQuantity})(
-  BuyTraining
-);
+export default connect(mapStateToProps, {
+  addToCart,
+  updateQuantity,
+  toggleShoppingBag,
+})(BuyTraining);

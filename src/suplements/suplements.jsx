@@ -5,11 +5,21 @@ import supPng from "../images/suplements.png";
 import backPng from "../images/backPng.png";
 import {useNavigate} from "react-router-dom";
 import {connect} from "react-redux";
-import {updateQuantity, addToCart} from "../store/card-action";
-import {ToastContainer, toast} from "react-toastify";
+import {
+  updateQuantity,
+  addToCart,
+  toggleShoppingBag,
+} from "../store/card-action";
+import {ToastContainer, toast, Zoom} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Suplements = ({shoppingCart, updateQuantity, addToCart}) => {
+const Suplements = ({
+  isOpen,
+  toggleShoppingBag,
+  shoppingCart,
+  updateQuantity,
+  addToCart,
+}) => {
   const [suplementsData, setSuplementsData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -31,6 +41,10 @@ const Suplements = ({shoppingCart, updateQuantity, addToCart}) => {
 
       if (existingItem) {
         updateQuantity(itemWithSource.id, existingItem.quantity + 1);
+        if (!isOpen) {
+          toggleShoppingBag();
+        }
+
         toast.success(
           `${itemWithSource.name} has been added to your shopping bag!`,
           {
@@ -39,6 +53,10 @@ const Suplements = ({shoppingCart, updateQuantity, addToCart}) => {
         );
       } else {
         addToCart(itemWithSource, 1);
+        if (!isOpen) {
+          toggleShoppingBag();
+        }
+        window.scrollTo(0, 0);
         toast.success(
           `${itemWithSource.name} has been added to your shopping bag!`,
           {
@@ -76,7 +94,8 @@ const Suplements = ({shoppingCart, updateQuantity, addToCart}) => {
 
   return (
     <div className="suplements-container">
-      <ToastContainer />
+      <ToastContainer className="toast" />
+
       <img className="back-png" src={backPng} alt="back" onClick={goBack} />
       <div className="background">
         <img src={supPng} alt="suplement" />
@@ -116,7 +135,10 @@ const Suplements = ({shoppingCart, updateQuantity, addToCart}) => {
 };
 const mapStateToProps = (state) => ({
   shoppingCart: state.shoppingCart,
+  isOpen: state.isOpen,
 });
-export default connect(mapStateToProps, {addToCart, updateQuantity})(
-  Suplements
-);
+export default connect(mapStateToProps, {
+  addToCart,
+  updateQuantity,
+  toggleShoppingBag,
+})(Suplements);

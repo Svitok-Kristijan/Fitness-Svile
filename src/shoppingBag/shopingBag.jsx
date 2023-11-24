@@ -3,13 +3,21 @@ import "./shopingBag.scss";
 import {useNavigate} from "react-router-dom";
 import shopingBagPng from "../images/shopingCard.png";
 import {connect} from "react-redux";
-import {removeFromCart, updateQuantity} from "../store/card-action";
+import {
+  removeFromCart,
+  updateQuantity,
+  toggleShoppingBag,
+} from "../store/card-action";
 
-const ShopingBag = ({shoppingCart, removeFromCart, updateQuantity}) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const ShopingBag = ({
+  isOpen,
+  toggleShoppingBag,
+  shoppingCart,
+  removeFromCart,
+  updateQuantity,
+}) => {
   const toggleOpen = () => {
-    setIsOpen(!isOpen);
+    toggleShoppingBag();
   };
 
   const navigate = useNavigate();
@@ -97,11 +105,13 @@ const ShopingBag = ({shoppingCart, removeFromCart, updateQuantity}) => {
 
 const mapStateToProps = (state) => ({
   shoppingCart: state.shoppingCart,
+  isOpen: state.isOpen,
 });
 
 const mapDispatchToProps = {
   removeFromCart,
   updateQuantity,
+  toggleShoppingBag,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShopingBag);

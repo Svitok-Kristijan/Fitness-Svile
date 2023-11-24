@@ -8,6 +8,13 @@
     rgba(181, 226, 219, 1) 36%,
     rgb(255, 130, 226) 72%
   );
+  .toast {
+    width: 600px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 5%;
+  }
 
   .back-png {
     width: 120px;

@@ -18,9 +18,12 @@ const Home = () => {
   return (
     <div className="Home-container">
       <img className="weight" src={weightPng} alt="weight" />
-      <div className="background"></div>
-      <div className="background-under"></div>
-      <div className="background-container"></div>
+
+      <div className="background-container">
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+      </div>
       <div className="App-background">
         <div className="App-Tittle-container">
           <p className="App-Tittle">Fitness Svile</p>

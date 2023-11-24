@@ -1,6 +1,7 @@
 const initialState = {
   shoppingCart: JSON.parse(localStorage.getItem("shoppingCart")) || [],
   totalPrice: 0,
+  isOpen: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -45,6 +46,12 @@ const reducer = (state = initialState, action) => {
         JSON.stringify(newStateUpdateQuantity.shoppingCart)
       );
       return newStateUpdateQuantity;
+
+    case "TOGGLE_SHOPPING_BAG":
+      return {
+        ...state,
+        isOpen: !state.isOpen,
+      };
 
     default:
       return state;

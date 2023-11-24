@@ -12,3 +12,7 @@ export const updateQuantity = (itemId, updatedQuantity) => ({
   type: "UPDATE_QUANTITY",
   payload: {itemId, updatedQuantity},
 });
+
+export const toggleShoppingBag = () => ({
+  type: "TOGGLE_SHOPPING_BAG",
+});
