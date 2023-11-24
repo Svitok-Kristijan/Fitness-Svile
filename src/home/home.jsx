@@ -1,10 +1,10 @@
 import React, {useEffect} from "react";
 import "./home.scss";
-import appBackgroundPhoto from "../images/background.jpg";
+
 import trainingPhoto from "../images/training.jpg";
 import trainingPlanPhoto from "../images/trainingPlan.jpg";
 import suplementsPhoto from "../images/suplements.jpg";
-import weightPng from "../images/weight.png";
+import weightPng from "../images/bars.png";
 
 import {Link} from "react-router-dom";
 //import {addCollectionAndDocuments} from "../utils/firebase.utils";
@@ -17,15 +17,14 @@ const Home = () => {
   }, []);*/
   return (
     <div className="Home-container">
-      <p className="App-Tittle">Fitness Svile</p>
       <img className="weight" src={weightPng} alt="weight" />
-
+      <div className="background"></div>
+      <div className="background-under"></div>
+      <div className="background-container"></div>
       <div className="App-background">
-        <img
-          className="App-background-photo"
-          src={appBackgroundPhoto}
-          alt="background"
-        />
+        <div className="App-Tittle-container">
+          <p className="App-Tittle">Fitness Svile</p>
+        </div>
         <div className="App-container">
           <Link to="/training" className="training-div">
             <img src={trainingPhoto} alt="training" />

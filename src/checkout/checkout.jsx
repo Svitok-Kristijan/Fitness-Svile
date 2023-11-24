@@ -11,6 +11,7 @@ const Checkout = ({shoppingCart, removeFromCart, updateQuantity}) => {
   const goBack = () => {
     navigate(-1);
   };
+
   const handleIncrement = (item) => {
     const existingItem = shoppingCart.find(
       (cartItem) => cartItem.id === item.id
@@ -45,18 +46,37 @@ const Checkout = ({shoppingCart, removeFromCart, updateQuantity}) => {
             {shoppingCart.map((item) => (
               <li key={item.id}>
                 <div className="item-container">
-                  <img src={item.picture} alt={item.name} />
-
-                  <p className="name">{item.name} &#174;</p>
-                  <div className="quantity-container">
-                    <button onClick={() => handleDecrement(item)}>
-                      &#8249;
-                    </button>
-                    <p className="quantity"> {item.quantity}</p>
-                    <button onClick={() => handleIncrement(item)}>
-                      &#8250;
-                    </button>
-                  </div>
+                  {item.source === "Suplements" && (
+                    <img src={item.picture} alt={item.name} />
+                  )}
+                  <p
+                    className={
+                      item.source === "BuyTraining" ? "name-training" : "name"
+                    }
+                  >
+                    {item.source === "BuyTraining" ? item.itemName : item.name}
+                    {""}
+                    &#174;
+                  </p>
+                  {item.source === "Suplements" && (
+                    <div className="quantity-container">
+                      <button onClick={() => handleDecrement(item)}>
+                        &#8249;
+                      </button>
+                      <p className="quantity"> {item.quantity}</p>
+                      <button onClick={() => handleIncrement(item)}>
+                        &#8250;
+                      </button>
+                    </div>
+                  )}
+                  {item.source === "BuyTraining" && (
+                    <div className="quantity-container-training">
+                      <p className="quantity"> {item.quantity}</p>
+                      <button onClick={() => handleDecrement(item)}>
+                        &#9986;
+                      </button>
+                    </div>
+                  )}
                 </div>
               </li>
             ))}

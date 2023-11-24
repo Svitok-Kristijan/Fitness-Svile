@@ -11,6 +11,7 @@ const ShopingBag = ({shoppingCart, removeFromCart, updateQuantity}) => {
   const toggleOpen = () => {
     setIsOpen(!isOpen);
   };
+
   const navigate = useNavigate();
 
   const navigation = () => {
@@ -49,13 +50,32 @@ const ShopingBag = ({shoppingCart, removeFromCart, updateQuantity}) => {
           {shoppingCart.length > 0 ? (
             shoppingCart.map((item) => (
               <div className="item" key={item.id}>
-                <img src={item.picture} alt="picSuplements" />
-                <p className="name">{item.name.slice(0, 15)}</p>
-                <div className="quantity-container">
-                  <button onClick={() => handleDecrement(item)}>-</button>
-                  <p className="quantity"> {item.quantity}</p>
-                  <button onClick={() => handleIncrement(item)}>+</button>
-                </div>
+                {item.source === "Suplements" && (
+                  <>
+                    <img src={item.picture} alt="picSuplements" />
+                    <p className="name">{item.name.slice(0, 15)}</p>
+                  </>
+                )}
+                {item.itemName && (
+                  <>
+                    <p className="name-training">
+                      {item.source === "Buy Training"
+                        ? item.itemName
+                        : item.itemName.slice(0, 30)}
+                    </p>
+
+                    <span className="price-training">
+                      {item.price.toFixed(2)} €
+                    </span>
+                  </>
+                )}
+                {item.source === "Suplements" && (
+                  <div className="quantity-container">
+                    <button onClick={() => handleDecrement(item)}>-</button>
+                    <p className="quantity"> {item.quantity}</p>
+                    <button onClick={() => handleIncrement(item)}>+</button>
+                  </div>
+                )}
               </div>
             ))
           ) : (

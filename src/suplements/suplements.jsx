@@ -19,21 +19,32 @@ const Suplements = ({shoppingCart, updateQuantity, addToCart}) => {
     navigate(-1);
   };
   const handleBuyNowClick = (item) => {
+    const itemWithSource = {
+      ...item,
+      source: "Suplements",
+    };
+
     if (shoppingCart) {
       const existingItem = shoppingCart.find(
-        (cartItem) => cartItem.id === item.id
+        (cartItem) => cartItem.id === itemWithSource.id
       );
 
       if (existingItem) {
-        updateQuantity(item.id, existingItem.quantity + 1);
-        toast.success(`${item.name} has been added to your shopping bag!`, {
-          autoClose: 2000,
-        });
+        updateQuantity(itemWithSource.id, existingItem.quantity + 1);
+        toast.success(
+          `${itemWithSource.name} has been added to your shopping bag!`,
+          {
+            autoClose: 2000,
+          }
+        );
       } else {
-        addToCart(item, 1);
-        toast.success(`${item.name} has been added to your shopping bag!`, {
-          autoClose: 2000,
-        });
+        addToCart(itemWithSource, 1);
+        toast.success(
+          `${itemWithSource.name} has been added to your shopping bag!`,
+          {
+            autoClose: 2000,
+          }
+        );
       }
     }
   };
