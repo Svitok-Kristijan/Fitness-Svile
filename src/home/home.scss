@@ -333,16 +333,17 @@
 }
 @media screen and (max-width: 1550px) {
   .App-container {
-    grid-gap: 2px;
+    grid-gap: 10px !important;
+    left: 47% !important;
   }
 
   .training-div {
-    width: 90% !important;
+    width: 95% !important;
     height: 50% !important;
     margin-top: 100px;
   }
   .second-div {
-    width: 90% !important;
+    width: 95% !important;
     height: 100% !important;
     margin-top: -150px !important;
     img {
@@ -354,7 +355,7 @@
     }
   }
   .suplement-div {
-    width: 120% !important;
+    width: 130% !important;
     margin-left: -20px !important;
     img {
       width: 100% !important;
