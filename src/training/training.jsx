@@ -8,7 +8,7 @@ const Training = () => {
     <div className="training-container">
       <div className="training">
         <h3>Training</h3>
-        <p>
+        <p className="descript-training">
           Try our best body exercises for your best performance and to become a
           better version of yourself.<br></br>For your maximum effectiveness,
           purchase our training plan.
