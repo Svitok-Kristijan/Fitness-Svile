@@ -8,7 +8,7 @@
 
   .weight {
     position: absolute;
-    left: 90%;
+    left: 88%;
     top: 25%;
 
     width: 160px;
@@ -181,19 +181,18 @@
 
     .App-container {
       display: grid;
-      position: absolute;
-      left: 50%;
-      top: 57%;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 10px;
+      max-width: 60%;
       transform: translate(-50%, -50%);
-      z-index: 99;
-      grid-template-columns: auto auto auto;
-      grid-template-rows: auto auto auto;
-      overflow-y: hidden;
+      position: absolute;
+      left: 45%;
+      top: 58%;
     }
 
     .training-div {
       border: 1px solid black;
-      width: 100%;
+
       height: 330px;
       grid-row: 2 / 3;
       grid-column: 1 / 3;
@@ -239,7 +238,7 @@
 
     .second-div {
       border: 1px solid rgb(0, 0, 0);
-      width: 730px;
+
       height: 330px;
       grid-row: 3 / 5;
       grid-column: 1 / 3;
@@ -330,5 +329,135 @@
         color: white;
       }
     }
+  }
+}
+@media screen and (max-width: 1550px) {
+  .App-container {
+    grid-gap: 2px;
+  }
+
+  .training-div {
+    width: 90% !important;
+    height: 50% !important;
+    margin-top: 100px;
+  }
+  .second-div {
+    width: 90% !important;
+    height: 100% !important;
+    margin-top: -150px !important;
+    img {
+      width: 80%;
+      height: 80%;
+    }
+    p {
+      font-size: smaller;
+    }
+  }
+  .suplement-div {
+    width: 120% !important;
+    margin-left: -20px !important;
+    img {
+      width: 100% !important;
+    }
+    p {
+      font-size: 26px !important;
+    }
+  }
+  .App-Tittle-container {
+    top: 35% !important;
+    left: 8% !important;
+  }
+  .weight {
+    left: 85% !important;
+  }
+}
+@media screen and (max-width: 1700px) {
+  .App-container {
+    grid-gap: 5px;
+  }
+
+  .training-div {
+    width: 80%;
+    height: 50%;
+    margin-top: 80px;
+  }
+  .second-div {
+    width: 80%;
+    height: 100%;
+    margin-top: -120px;
+    img {
+      width: 70%;
+      height: 70%;
+    }
+    p {
+      font-size: smaller;
+    }
+  }
+  .suplement-div {
+    width: 100%;
+    margin-left: 0;
+    img {
+      width: 100%;
+    }
+    p {
+      font-size: 22px;
+    }
+  }
+  .App-Tittle-container {
+    top: 30%;
+    left: 8%;
+  }
+  .weight {
+    left: 82%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .App-container {
+    grid-gap: 2px;
+  }
+
+  .training-div {
+    width: 90% !important;
+    height: 40% !important;
+    margin-top: 100px;
+    p {
+      font-size: 26px !important;
+    }
+  }
+  .second-div {
+    width: 90%;
+    height: 120% !important;
+    margin-top: -150px;
+    img {
+      width: 80%;
+      height: 80%;
+    }
+    p {
+      font-size: 26px !important;
+    }
+  }
+  .suplement-div {
+    width: 120% !important;
+    height: 85% !important;
+    margin-left: -20px;
+    img {
+      width: 100%;
+    }
+    p {
+      font-size: 26px !important;
+    }
+  }
+  .App-Tittle-container {
+    top: 35%;
+    left: 8%;
+    .App-Tittle {
+      font-size: 70px !important;
+    }
+  }
+  .weight {
+    left: 85%;
+    width: 12% !important;
+    height: 10% !important;
   }
 }

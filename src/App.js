@@ -69,7 +69,7 @@ function App() {
             }
           />
           <Route
-            path="/stomach"
+            path="/stomack"
             element={
               <TrainingLayout>
                 <Stomach />
