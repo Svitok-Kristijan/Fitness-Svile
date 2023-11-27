@@ -109,7 +109,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        
+
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -190,5 +190,13 @@
         display: flex;
       }
     }
+  }
+}
+@media screen and (max-width: 1550px) {
+  .training-plan {
+    bottom: -320% !important;
+  }
+  .shoulder-description {
+    margin-top: 220px !important;
   }
 }
