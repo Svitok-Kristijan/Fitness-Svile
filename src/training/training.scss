@@ -139,3 +139,22 @@
     }
   }
 }
+@media screen and (max-width: 1550px) {
+  .training-image {
+    &::before {
+      left: 80% !important;
+      top: 14% !important;
+    }
+    img {
+      width: 500px !important;
+      height: 500px !important;
+    }
+  }
+  .link-container {
+    bottom: -30%;
+  }
+  p {
+    font-size: 19px !important;
+    height: 100% !important;
+  }
+}
