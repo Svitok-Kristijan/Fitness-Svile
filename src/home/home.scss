@@ -338,30 +338,35 @@
   }
 
   .training-div {
-    width: 95% !important;
+    width: 100% !important;
     height: 50% !important;
     margin-top: 100px;
+    margin-left: -25px !important;
+    p {
+      font-size: 36px !important;
+    }
   }
   .second-div {
-    width: 95% !important;
+    width: 100% !important;
     height: 100% !important;
     margin-top: -150px !important;
+    margin-left: -25px !important;
     img {
       width: 80%;
       height: 80%;
     }
     p {
-      font-size: smaller;
+      font-size: 36px !important;
     }
   }
   .suplement-div {
-    width: 130% !important;
+    width: 140% !important;
     margin-left: -20px !important;
     img {
       width: 100% !important;
     }
     p {
-      font-size: 26px !important;
+      font-size: 36px !important;
     }
   }
   .App-Tittle-container {
