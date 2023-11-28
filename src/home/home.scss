@@ -467,3 +467,37 @@
     height: 10% !important;
   }
 }
+@media screen and (max-width: 600px) {
+  .App-Tittle-container {
+    top: 3% !important;
+    left: 10% !important;
+    transform: rotate(80deg) !important;
+  }
+  .App-container {
+    display: flex !important;
+    height: 100% !important;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .training-div {
+    height: 300px !important;
+    width: 110% !important;
+    margin-top: 60px !important;
+  }
+  .second-div {
+    height: 300px !important;
+    width: 110% !important;
+    margin-top: 50px !important;
+  }
+  .suplement-div {
+    height: 200px !important;
+    width: 135% !important;
+    margin-bottom: 100px !important;
+  }
+  .weight {
+    width: 65px !important;
+    height: 50px !important;
+    left: 80% !important;
+  }
+}
