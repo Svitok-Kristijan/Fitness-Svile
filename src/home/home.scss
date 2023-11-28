@@ -469,9 +469,9 @@
 }
 @media screen and (max-width: 600px) {
   .App-Tittle-container {
-    top: 3% !important;
+    top: 1% !important;
     left: 10% !important;
-    transform: rotate(80deg) !important;
+    transform: rotate(75deg) !important;
   }
   .App-container {
     display: flex !important;
@@ -482,18 +482,21 @@
 
   .training-div {
     height: 300px !important;
-    width: 110% !important;
-    margin-top: 60px !important;
+    width: 120% !important;
+    margin-top: 70px !important;
+    left: -10% !important;
   }
   .second-div {
     height: 300px !important;
-    width: 110% !important;
+    width: 120% !important;
     margin-top: 50px !important;
+    left: -10% !important;
   }
   .suplement-div {
     height: 200px !important;
-    width: 135% !important;
+    width: 150% !important;
     margin-bottom: 100px !important;
+    left: -10% !important;
   }
   .weight {
     width: 65px !important;
